@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pop & Parcel creates personalised kids' party packs, event favours and small embroidery in the Vaal Triangle, South Africa." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0c6d6f" />
+  <meta property="og:title" content="Pop & Parcel | Personalised Parties, Gifts & Events" />
+  <meta property="og:description" content="Colourful personalised party packs, event favours and small embroidery made in the Vaal Triangle." />
+  <meta property="og:type" content="website" />
+  <title>Pop & Parcel | Personalised Parties, Gifts & Events</title>
+  
+  <style>
+    :root{
+      --teal:#0c6d6f;
+      --teal-dark:#075658;
+      --ink:#264248;
+      --muted:#63767a;
+      --cream:#f6f1df;
+      --paper:#fffdf8;
+      --pink:#f6b9c7;
+      --peach:#ffc6a8;
+      --lav:#d8b9f6;
+      --blue:#b8ddf8;
+      --lime:#d9f58c;
+      --purple:#a9589e;
+      --line:rgba(12,109,111,.15);
+      --shadow:0 14px 40px rgba(35,72,78,.10);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:#f7f4ed;
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1120px,calc(100% - 30px));margin:auto}
+
+    .nav{
+      position:sticky;top:0;z-index:30;
+      background:rgba(247,244,237,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(12,109,111,.08)
+    }
+    .nav-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.02em;color:var(--teal)}
+    .brandmark{
+      width:40px;height:40px;border-radius:50%;
+      border:1.5px solid var(--teal);display:grid;place-items:center;
+      font-family:Georgia,serif;font-weight:700
+    }
+    .navlinks{display:flex;align-items:center;gap:20px;color:var(--teal-dark);font-weight:700;font-size:.94rem}
+    .navlinks a:hover{opacity:.72}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      border:0;border-radius:3px;padding:13px 19px;font-weight:800;cursor:pointer;
+      transition:.2s ease
+    }
+    .btn-primary{background:var(--teal);color:#fff}
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-1px)}
+    .btn-secondary{background:#fff;border:1px solid var(--teal);color:var(--teal)}
+
+
+
+    .hero{
+      position:relative;
+      min-height:610px;
+      padding:0;
+      overflow:hidden;
+      background:#132b34;
+    }
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(14,37,47,.98) 0%,rgba(14,37,47,.92) 34%,rgba(14,37,47,.58) 54%,rgba(14,37,47,.12) 76%,rgba(14,37,47,.04) 100%),
+        radial-gradient(circle at 88% 18%, rgba(255,113,176,.88), transparent 22%),
+        radial-gradient(circle at 78% 64%, rgba(119,215,255,.86), transparent 27%),
+        radial-gradient(circle at 60% 38%, rgba(190,133,255,.72), transparent 26%),
+        linear-gradient(135deg,#ff7caf 0%,#ba91ff 50%,#6fd8f5 100%);
+    }
+    .hero-bg:after{
+      content:"✨ YOUR BEST PRODUCT / PARTY PHOTO ✨";
+      position:absolute;
+      right:6%;
+      top:50%;
+      transform:translateY(-50%);
+      width:min(40vw,480px);
+      aspect-ratio:4/5;
+      border-radius:34px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:24px;
+      color:#0c6d6f;
+      font-weight:900;
+      letter-spacing:.08em;
+      font-size:.78rem;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(255,255,255,.65);
+      box-shadow:0 24px 65px rgba(0,0,0,.22);
+    }
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:610px;
+      display:flex;
+      align-items:center;
+    }
+    .hero-copy{
+      max-width:610px;
+      padding:68px 0 72px;
+    }
+    .hero-copy .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#ffd862;
+      font-size:.78rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      margin-bottom:16px;
+    }
+    .hero-copy .eyebrow:before{
+      content:"";
+      width:9px;height:9px;border-radius:50%;
+      background:#ffd862;
+      box-shadow:0 0 0 5px rgba(255,216,98,.14);
+    }
+    .hero h1{
+      color:#fff;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-size:clamp(3.35rem,6.3vw,5.8rem);
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-.055em;
+      margin:0 0 22px;
+      max-width:650px;
+    }
+    .hero h1 .accent{color:#ffb4d3}
+    .hero-copy p{
+      color:rgba(255,255,255,.80);
+      font-size:1.08rem;
+      max-width:540px;
+      margin:0;
+    }
+    .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero .btn-primary{
+      background:#ffd15a;
+      color:#15343e;
+      border-radius:3px;
+      padding:14px 22px;
+      box-shadow:0 10px 28px rgba(255,209,90,.20)
+    }
+    .hero .btn-secondary{
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:3px;
+      padding:14px 22px
+    }
+    .hero .mini-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px 24px;
+      margin-top:28px;
+      color:rgba(255,255,255,.72);
+      font-size:.9rem
+    }
+    .hero .mini-proof strong{color:#fff}
+    .hero-shape{
+      position:absolute;
+      border-radius:999px;
+      filter:blur(.2px);
+      opacity:.95
+    }
+    .hero-shape.one{width:110px;height:110px;background:#ff87bd;right:8%;top:9%}
+    .hero-shape.two{width:75px;height:75px;background:#7ee5ff;right:44%;bottom:10%}
+    .hero-shape.three{width:48px;height:48px;background:#c8a2ff;right:49%;top:14%}
+    .hero-label{
+      position:absolute;
+      right:7.5%;
+      bottom:7.5%;
+      z-index:3;
+      background:#fff;
+      color:var(--teal);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      font-size:.78rem;
+      box-shadow:0 10px 28px rgba(0,0,0,.12)
+    }
+
+    @media(max-width:980px){
+      .hero-bg:after{
+        right:4%;
+        width:38vw;
+      }
+      .hero-copy{max-width:56%}
+    }
+    @media(max-width:760px){
+      .hero{min-height:auto}
+      .hero-bg{
+        background:
+          linear-gradient(180deg,rgba(14,37,47,.97) 0%,rgba(14,37,47,.90) 52%,rgba(14,37,47,.30) 100%),
+          radial-gradient(circle at 78% 24%, rgba(255,113,176,.88), transparent 25%),
+          radial-gradient(circle at 80% 75%, rgba(119,215,255,.86), transparent 30%),
+          linear-gradient(135deg,#ff7caf,#ba91ff 50%,#6fd8f5);
+      }
+      .hero-inner{min-height:auto;display:block;padding-bottom:24px}
+      .hero-copy{max-width:none;padding:48px 0 28px}
+      .hero-bg:after{
+        position:relative;
+        content:"✨ YOUR BEST PRODUCT / PARTY PHOTO ✨";
+        display:grid;
+        right:auto;top:auto;transform:none;
+        width:calc(100% - 30px);
+        margin:0 auto 28px;
+        aspect-ratio:16/10;
+        border-radius:26px
+      }
+      .hero-label{display:none}
+      .hero-shape{display:none}
+    }
+
+    .section{padding:66px 0}
+    .section.soft{
+      background:
+        radial-gradient(circle at 25% 20%, rgba(246,185,199,.48), transparent 24%),
+        radial-gradient(circle at 72% 35%, rgba(184,221,248,.55), transparent 24%),
+        radial-gradient(circle at 50% 75%, rgba(216,185,246,.42), transparent 28%),
+        var(--cream);
+    }
+    .section.blue{
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,198,168,.36), transparent 25%),
+        radial-gradient(circle at 75% 70%, rgba(216,185,246,.30), transparent 25%),
+        var(--blue);
+    }
+    .section.lime{
+      background:
+        radial-gradient(circle at 60% 20%, rgba(184,221,248,.55), transparent 28%),
+        radial-gradient(circle at 35% 70%, rgba(246,185,199,.45), transparent 26%),
+        var(--lime);
+    }
+    .section.purple{
+      background:
+        radial-gradient(circle at 52% 25%, rgba(255,198,168,.28), transparent 26%),
+        linear-gradient(135deg,#a95098,#9b5da8);
+      color:#fff
+    }
+    .section.purple h2,.section.purple h3,.section.purple .kicker{color:#fff}
+    .section.purple p{color:rgba(255,255,255,.86)}
+
+    .section-title{max-width:760px;margin-bottom:30px}
+    .kicker{color:var(--teal);font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+    h2{font-size:clamp(2.25rem,4.5vw,3.7rem);line-height:1;margin:7px 0 12px}
+    h3{font-size:1.5rem;margin:8px 0}
+    .section-title p{color:var(--muted);font-size:1.04rem}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card,.service-card,.order,.note,.step{
+      background:rgba(255,253,248,.90);border:1px solid rgba(12,109,111,.11);
+      box-shadow:var(--shadow)
+    }
+    .card{border-radius:28px;padding:20px}
+    .card.featured{outline:2px solid var(--teal);position:relative}
+    .badge{
+      position:absolute;right:18px;top:18px;background:var(--teal);color:#fff;
+      padding:6px 10px;border-radius:999px;font-size:.7rem;font-weight:900;z-index:2
+    }
+    .price{font-family:Georgia,serif;color:var(--teal);font-size:2.2rem;margin:7px 0;font-weight:500}
+    .sub{color:var(--muted);font-size:.92rem}
+    .features{list-style:none;padding:0;margin:16px 0 20px;display:grid;gap:8px}
+    .features li:before{content:"✦";color:var(--teal);margin-right:8px;font-size:.8rem}
+    .card .btn,.service-card .btn{width:100%}
+
+    .image-placeholder{
+      min-height:220px;border-radius:28px;overflow:hidden;
+      display:grid;place-items:center;text-align:center;padding:20px;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(246,185,199,.68), transparent 28%),
+        radial-gradient(circle at 72% 68%, rgba(184,221,248,.72), transparent 30%),
+        radial-gradient(circle at 55% 25%, rgba(216,185,246,.60), transparent 28%),
+        #f5efd9;
+      color:var(--teal);
+      border:1px solid rgba(12,109,111,.10)
+    }
+    .image-placeholder strong{display:block;font-family:Georgia,serif;font-size:1.18rem;font-weight:500}
+    .image-placeholder span{display:block;margin-top:4px;font-size:.82rem;color:var(--teal-dark)}
+
+    .deluxe-strip{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:28px;
+      background:rgba(255,253,248,.86);padding:30px;border-radius:34px;box-shadow:var(--shadow)
+    }
+    .deluxe-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .pill{padding:14px;border:1px solid rgba(12,109,111,.12);border-radius:18px;background:#fff;color:var(--teal-dark)}
+    .activity{
+      min-height:340px;border-radius:30px;padding:24px;
+      background:linear-gradient(145deg,var(--pink),var(--lav),var(--blue));
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .activity .sheet{background:rgba(255,255,255,.90);border-radius:18px;padding:18px}
+    .crayons{display:flex;gap:7px;margin-top:12px}
+    .crayons span{width:11px;height:56px;background:#fff;border-radius:8px;display:block}
+
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service-card{border-radius:28px;padding:18px}
+    .service-card p{color:var(--muted)}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .note{border-radius:28px;padding:24px;color:var(--teal-dark)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{border-radius:24px;padding:20px}
+    .step b{font-family:Georgia,serif;color:var(--teal);font-size:1.4rem}
+    .step p{color:var(--muted)}
+
+    .order{border-radius:34px;padding:30px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:grid;gap:7px;color:var(--teal-dark);font-weight:800;font-size:.9rem}
+    input,select,textarea{
+      width:100%;border:1px solid rgba(12,109,111,.22);background:#fff;
+      border-radius:10px;padding:13px 14px;color:var(--ink);outline:none
+    }
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(12,109,111,.10)}
+    textarea{min-height:115px;resize:vertical}
+    .full{grid-column:1/-1}
+    .form-help,.fineprint{color:var(--muted);font-size:.83rem}
+
+    footer{
+      background:
+        radial-gradient(circle at 48% 20%, rgba(255,198,168,.48), transparent 25%),
+        radial-gradient(circle at 72% 70%, rgba(184,221,248,.52), transparent 28%),
+        radial-gradient(circle at 25% 65%, rgba(246,185,199,.36), transparent 28%),
+        var(--cream);
+      padding:48px 0 60px
+    }
+    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+
+    .floating-wa{
+      position:fixed;right:18px;bottom:18px;z-index:40;
+      width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+      display:grid;place-items:center;font-weight:900;box-shadow:0 10px 28px rgba(0,0,0,.20)
+    }
+
+    @media(max-width:900px){
+      .navlinks a:not(.btn){display:none}
+      .hero-grid,.deluxe-strip,.two-col{grid-template-columns:1fr}
+      .cards,.service-grid,.gallery-grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .form-grid{grid-template-columns:1fr}
+      .full{grid-column:auto}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 20px,1120px)}
+      .hero{padding-top:34px}
+      .hero-art{min-height:330px;border-radius:30px}
+      .cards,.service-grid,.gallery-grid,.steps{grid-template-columns:1fr}
+      .deluxe-list{grid-template-columns:1fr}
+      .footer-grid{flex-direction:column}
+      h1{font-size:3.4rem}
+      .navlinks .btn{padding:10px 13px}
+    }
+  
+    .sparkle{position:absolute;pointer-events:none;animation:twinkle 2.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(255,255,255,.35))}
+    .sparkle.s1{top:18%;left:6%;font-size:1.4rem}.sparkle.s2{top:12%;right:46%;font-size:1rem;animation-delay:.8s}.sparkle.s3{bottom:18%;right:42%;font-size:1.2rem;animation-delay:1.5s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.45}50%{transform:scale(1.2) rotate(8deg);opacity:1}}
+    .content-band{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .article-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:.5rem 0}.article-card p{color:var(--muted)}
+    .text-link{color:var(--teal);font-weight:900}.text-link:hover{text-decoration:underline}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust-item{background:rgba(255,255,255,.75);border:1px solid rgba(12,109,111,.12);padding:20px;border-radius:22px}
+    .trust-item strong{display:block;margin-bottom:6px;color:var(--teal-dark)}
+    .legal-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.9rem}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.article-grid,.trust-grid{grid-template-columns:1fr}}
+
+  </style>
+
+
+<style>
+/* V7 readability fixes */
+.hero-bg{
+  background:
+    linear-gradient(90deg,
+      rgba(10,36,47,1) 0%,
+      rgba(10,36,47,.99) 38%,
+      rgba(10,36,47,.92) 50%,
+      rgba(10,36,47,.48) 64%,
+      rgba(10,36,47,.08) 78%,
+      rgba(10,36,47,.02) 100%),
+    radial-gradient(circle at 88% 18%, rgba(255,113,176,.92), transparent 22%),
+    radial-gradient(circle at 82% 68%, rgba(119,215,255,.92), transparent 28%),
+    radial-gradient(circle at 67% 38%, rgba(190,133,255,.82), transparent 26%),
+    linear-gradient(135deg,#ff7caf 0%,#ba91ff 50%,#6fd8f5 100%);
+}
+.hero-bg:after{
+  right:3.5%;
+  width:min(35vw,430px);
+}
+.hero-copy{
+  max-width:590px;
+  position:relative;
+  z-index:5;
+}
+.hero h1{
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+.hero h1 .accent{
+  color:#ffbdd8;
+}
+.hero-label{display:none}
+
+/* Ordering section: high-contrast typography */
+.section.purple{
+  background:
+    radial-gradient(circle at 52% 25%, rgba(255,198,168,.18), transparent 26%),
+    linear-gradient(135deg,#93458b,#754d8e);
+}
+.section.purple .section-title h2,
+.section.purple .section-title .kicker{
+  color:#fff;
+}
+.section.purple .section-title p{
+  color:#f8f1f7;
+}
+.section.purple .step{
+  background:#fffdf8;
+  border:1px solid rgba(12,109,111,.16);
+  box-shadow:0 12px 28px rgba(32,28,50,.16);
+}
+.section.purple .step b{
+  color:#075f62;
+  font-weight:700;
+}
+.section.purple .step p{
+  color:#334f54;
+  font-weight:500;
+}
+.section.purple .step strong,
+.section.purple .step h3{
+  color:#153f45;
+}
+
+@media(max-width:980px) and (min-width:761px){
+  .hero-bg:after{width:34vw;right:2.5%}
+  .hero-copy{max-width:58%}
+  .hero h1{font-size:clamp(3rem,5.5vw,4.5rem)}
+}
+@media(max-width:760px){
+  .hero-copy{max-width:none}
+  .hero-bg:after{
+    width:calc(100% - 30px);
+    right:auto;
+  }
+}
+
+    .sparkle{position:absolute;pointer-events:none;animation:twinkle 2.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(255,255,255,.35))}
+    .sparkle.s1{top:18%;left:6%;font-size:1.4rem}.sparkle.s2{top:12%;right:46%;font-size:1rem;animation-delay:.8s}.sparkle.s3{bottom:18%;right:42%;font-size:1.2rem;animation-delay:1.5s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.45}50%{transform:scale(1.2) rotate(8deg);opacity:1}}
+    .content-band{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .article-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:.5rem 0}.article-card p{color:var(--muted)}
+    .text-link{color:var(--teal);font-weight:900}.text-link:hover{text-decoration:underline}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust-item{background:rgba(255,255,255,.75);border:1px solid rgba(12,109,111,.12);padding:20px;border-radius:22px}
+    .trust-item strong{display:block;margin-bottom:6px;color:var(--teal-dark)}
+    .legal-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.9rem}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.article-grid,.trust-grid{grid-template-columns:1fr}}
+
+  </style>
+
+
+<style>
+/* V8 hero spacing + simplification */
+.hero-bg:after{
+  right:4%;
+  width:min(29vw,350px);
+  aspect-ratio:4/5;
+  border-radius:28px;
+}
+.hero-copy{
+  max-width:560px;
+}
+.hero .actions{
+  margin-top:30px;
+  gap:14px;
+  max-width:500px;
+}
+.hero .btn-secondary{
+  margin-right:34px;
+}
+/* Remove the cluttered price/location line below the hero buttons */
+.hero .mini-proof{
+  display:none !important;
+}
+
+@media(max-width:1100px) and (min-width:761px){
+  .hero-bg:after{
+    width:min(27vw,315px);
+    right:3%;
+  }
+  .hero-copy{
+    max-width:54%;
+  }
+  .hero .actions{
+    max-width:440px;
+  }
+}
+@media(max-width:760px){
+  .hero-bg:after{
+    width:calc(100% - 48px);
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+    aspect-ratio:16/10;
+  }
+  .hero .btn-secondary{
+    margin-right:0;
+  }
+}
+
+    .sparkle{position:absolute;pointer-events:none;animation:twinkle 2.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(255,255,255,.35))}
+    .sparkle.s1{top:18%;left:6%;font-size:1.4rem}.sparkle.s2{top:12%;right:46%;font-size:1rem;animation-delay:.8s}.sparkle.s3{bottom:18%;right:42%;font-size:1.2rem;animation-delay:1.5s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.45}50%{transform:scale(1.2) rotate(8deg);opacity:1}}
+    .content-band{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .article-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:.5rem 0}.article-card p{color:var(--muted)}
+    .text-link{color:var(--teal);font-weight:900}.text-link:hover{text-decoration:underline}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust-item{background:rgba(255,255,255,.75);border:1px solid rgba(12,109,111,.12);padding:20px;border-radius:22px}
+    .trust-item strong{display:block;margin-bottom:6px;color:var(--teal-dark)}
+    .legal-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.9rem}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.article-grid,.trust-grid{grid-template-columns:1fr}}
+
+  </style>
+
+
+<style>
+/* V9 — responsive rebuild */
+html, body { overflow-x: hidden; }
+
+/* Header */
+.nav-inner{
+  min-height:68px;
+  gap:14px;
+}
+.brand{
+  min-width:0;
+}
+.brand > span:last-child{
+  white-space:nowrap;
+}
+.navlinks{
+  min-width:0;
+}
+.navlinks .btn{
+  white-space:nowrap;
+}
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height:560px;
+  overflow:hidden;
+  background:#102d38;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(10,36,47,1) 0%,
+      rgba(10,36,47,.98) 42%,
+      rgba(10,36,47,.70) 60%,
+      rgba(10,36,47,.12) 100%),
+    radial-gradient(circle at 87% 18%, rgba(255,113,176,.95), transparent 23%),
+    radial-gradient(circle at 84% 75%, rgba(119,215,255,.95), transparent 30%),
+    radial-gradient(circle at 69% 40%, rgba(190,133,255,.88), transparent 27%),
+    linear-gradient(135deg,#ff7caf 0%,#ba91ff 50%,#6fd8f5 100%);
+}
+.hero-bg:after{ display:none !important; content:none !important; }
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  min-height:560px;
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(280px,.68fr);
+  align-items:center;
+  gap:56px;
+  padding:56px 0;
+}
+.hero-copy{
+  max-width:620px;
+  min-width:0;
+  position:relative;
+  z-index:3;
+}
+.hero h1{
+  margin:0 0 20px;
+  max-width:620px;
+  font-size:clamp(3rem,5.4vw,5.2rem);
+  line-height:.96;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.hero-copy p{
+  max-width:540px;
+  font-size:1.05rem;
+}
+.hero .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  max-width:100%;
+  margin-top:28px;
+}
+.hero .btn-secondary{
+  margin-right:0 !important;
+}
+
+.hero-photo{
+  width:100%;
+  max-width:350px;
+  justify-self:end;
+  aspect-ratio:4/5;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255,255,255,.35), transparent 20%),
+    radial-gradient(circle at 72% 30%, rgba(255,181,215,.95), transparent 30%),
+    radial-gradient(circle at 55% 76%, rgba(119,215,255,.95), transparent 34%),
+    linear-gradient(145deg,#f4c6de,#c7a3fb 54%,#84d8f4);
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 20px 50px rgba(0,0,0,.22);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+.hero-photo-label{
+  width:calc(100% - 40px);
+  padding:14px 16px;
+  text-align:center;
+  background:rgba(255,255,255,.9);
+  color:var(--teal);
+  border-radius:14px;
+  font-size:.74rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+/* Ordering section readability */
+.section.purple{
+  background:
+    radial-gradient(circle at 52% 25%, rgba(255,198,168,.18), transparent 26%),
+    linear-gradient(135deg,#8d4387,#70497f) !important;
+}
+.section.purple .step{
+  background:#fffdf8 !important;
+}
+.section.purple .step strong,
+.section.purple .step p{
+  color:#24464c !important;
+}
+.section.purple .step p{
+  font-weight:500;
+}
+
+/* Tablet */
+@media (max-width: 900px){
+  .navlinks a:not(.btn){ display:none; }
+
+  .hero-inner{
+    grid-template-columns:minmax(0,1fr) minmax(230px,.55fr);
+    gap:30px;
+  }
+  .hero h1{
+    font-size:clamp(2.8rem,6vw,4.2rem);
+  }
+  .hero-photo{
+    max-width:290px;
+  }
+}
+
+/* Phones */
+@media (max-width: 700px){
+  .wrap{
+    width:min(100% - 28px,1120px);
+  }
+
+  .nav-inner{
+    min-height:64px;
+  }
+  .brandmark{
+    width:36px;
+    height:36px;
+    flex:0 0 36px;
+  }
+  .brand > span:last-child{
+    font-size:.98rem;
+  }
+  .navlinks .btn{
+    padding:10px 13px;
+    font-size:.86rem;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+  .hero-bg{
+    background:
+      linear-gradient(180deg,
+        rgba(10,36,47,.98) 0%,
+        rgba(10,36,47,.96) 48%,
+        rgba(10,36,47,.68) 69%,
+        rgba(10,36,47,.20) 100%),
+      radial-gradient(circle at 75% 70%, rgba(119,215,255,.95), transparent 34%),
+      radial-gradient(circle at 82% 22%, rgba(255,113,176,.92), transparent 28%),
+      radial-gradient(circle at 35% 85%, rgba(190,133,255,.72), transparent 32%),
+      linear-gradient(145deg,#ff7caf,#ba91ff 50%,#6fd8f5);
+  }
+  .hero-inner{
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:28px;
+    padding:38px 0 34px;
+  }
+  .hero-copy{
+    width:100%;
+    max-width:none;
+  }
+  .hero-copy .eyebrow{
+    margin-bottom:14px;
+    font-size:.72rem;
+    letter-spacing:.11em;
+  }
+  .hero h1{
+    max-width:none;
+    font-size:clamp(2.55rem,12vw,3.7rem);
+    line-height:.98;
+    letter-spacing:-.05em;
+    margin-bottom:18px;
+  }
+  .hero-copy p{
+    max-width:none;
+    font-size:1rem;
+    line-height:1.58;
+  }
+  .hero .actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:11px;
+    margin-top:24px;
+  }
+  .hero .btn{
+    width:100%;
+    min-height:50px;
+  }
+  .hero-photo{
+    width:100%;
+    max-width:none;
+    aspect-ratio:16/9;
+    border-radius:22px;
+    justify-self:auto;
+  }
+  .hero-photo-label{
+    width:auto;
+    max-width:80%;
+    font-size:.68rem;
+  }
+
+  .cards,
+  .service-grid,
+  .gallery-grid,
+  .steps,
+  .two-col,
+  .deluxe-strip{
+    grid-template-columns:1fr !important;
+  }
+
+  .section{
+    padding:50px 0;
+  }
+  .section-title{
+    margin-bottom:24px;
+  }
+  h2{
+    font-size:clamp(2rem,10vw,3rem);
+  }
+
+  .order{
+    padding:22px 16px;
+    border-radius:24px;
+  }
+  .form-grid{
+    grid-template-columns:1fr !important;
+  }
+  .full{
+    grid-column:auto !important;
+  }
+
+  .floating-wa{
+    width:54px;
+    height:54px;
+    right:14px;
+    bottom:14px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px){
+  .wrap{
+    width:min(100% - 22px,1120px);
+  }
+  .brand > span:last-child{
+    font-size:.88rem;
+  }
+  .navlinks .btn{
+    padding:9px 11px;
+    font-size:.78rem;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,11.7vw,3rem);
+  }
+  .hero-copy p{
+    font-size:.96rem;
+  }
+}
+
+    .sparkle{position:absolute;pointer-events:none;animation:twinkle 2.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(255,255,255,.35))}
+    .sparkle.s1{top:18%;left:6%;font-size:1.4rem}.sparkle.s2{top:12%;right:46%;font-size:1rem;animation-delay:.8s}.sparkle.s3{bottom:18%;right:42%;font-size:1.2rem;animation-delay:1.5s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.45}50%{transform:scale(1.2) rotate(8deg);opacity:1}}
+    .content-band{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .article-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:.5rem 0}.article-card p{color:var(--muted)}
+    .text-link{color:var(--teal);font-weight:900}.text-link:hover{text-decoration:underline}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust-item{background:rgba(255,255,255,.75);border:1px solid rgba(12,109,111,.12);padding:20px;border-radius:22px}
+    .trust-item strong{display:block;margin-bottom:6px;color:var(--teal-dark)}
+    .legal-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.9rem}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.article-grid,.trust-grid{grid-template-columns:1fr}}
+
+  </style>
+
+
+<style>
+/* V10 — sparkly + fun brand layer */
+:root{
+  --sun:#ffd75e;
+  --hot-pink:#ff73ad;
+  --bubble:#8ae6ff;
+  --violet:#c99cff;
+}
+
+body{
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255,215,94,.10), transparent 18%),
+    radial-gradient(circle at 90% 20%, rgba(255,115,173,.10), transparent 20%),
+    #f7f4ed;
+}
+
+/* Tiny sparkle motif used throughout the site */
+.sparkle-cluster{
+  position:absolute;
+  pointer-events:none;
+  z-index:4;
+  color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.14);
+}
+.sparkle-cluster span{
+  position:absolute;
+  display:block;
+  line-height:1;
+  animation:twinkle 2.8s ease-in-out infinite;
+}
+.sparkle-cluster span:nth-child(2){animation-delay:.6s}
+.sparkle-cluster span:nth-child(3){animation-delay:1.1s}
+.sparkle-cluster span:nth-child(4){animation-delay:1.7s}
+@keyframes twinkle{
+  0%,100%{transform:scale(.82) rotate(0deg);opacity:.58}
+  50%{transform:scale(1.18) rotate(10deg);opacity:1}
+}
+
+.hero-sparkles.left{left:2.2%;top:16%;width:110px;height:180px}
+.hero-sparkles.left span:nth-child(1){left:10px;top:10px;font-size:24px;color:#ffd75e}
+.hero-sparkles.left span:nth-child(2){right:18px;top:58px;font-size:16px;color:#ffb6d2}
+.hero-sparkles.left span:nth-child(3){left:34px;bottom:28px;font-size:12px;color:#9feaff}
+.hero-sparkles.left span:nth-child(4){right:0;bottom:0;font-size:22px;color:#fff}
+.hero-sparkles.right{right:1.5%;top:8%;width:120px;height:150px}
+.hero-sparkles.right span:nth-child(1){right:18px;top:6px;font-size:22px;color:#ffd75e}
+.hero-sparkles.right span:nth-child(2){left:0;top:50px;font-size:14px;color:#fff}
+.hero-sparkles.right span:nth-child(3){right:38px;bottom:26px;font-size:18px;color:#ffb6d2}
+.hero-sparkles.right span:nth-child(4){left:32px;bottom:0;font-size:12px;color:#9feaff}
+
+.hero-copy .eyebrow{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  padding:8px 12px;
+  border-radius:999px;
+  backdrop-filter:blur(8px);
+}
+.hero h1 .accent{
+  background:linear-gradient(90deg,#ffb6d2 0%,#ffd75e 50%,#a4ecff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 4px 12px rgba(255,134,187,.12));
+}
+.hero-photo{
+  position:relative;
+  border:2px solid rgba(255,255,255,.58);
+  transform:rotate(1.4deg);
+}
+.hero-photo:before,.hero-photo:after{
+  position:absolute;
+  z-index:2;
+  content:'✦';
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,.13);
+}
+.hero-photo:before{
+  width:58px;height:58px;left:-18px;top:34px;
+  background:#ffd75e;color:#173640;font-size:24px;
+}
+.hero-photo:after{
+  content:'★';
+  width:46px;height:46px;right:-14px;bottom:44px;
+  background:#ff79b2;color:#fff;font-size:18px;
+}
+
+.btn{border-radius:999px !important}
+.hero .btn-primary,.btn-primary{
+  background:linear-gradient(135deg,#ffd75e,#ffbd5f);
+  color:#173640;
+  box-shadow:0 10px 22px rgba(255,194,85,.20);
+}
+.nav .btn-primary{background:linear-gradient(135deg,var(--teal),#149399);color:#fff}
+.btn-secondary{background:rgba(255,255,255,.92)}
+.card .btn-secondary,.service-card .btn-secondary{background:#fff}
+.btn:hover{transform:translateY(-2px) scale(1.01)}
+
+/* Confetti-like soft dots between sections */
+.section{position:relative}
+.section:before{
+  content:'';
+  position:absolute;
+  width:12px;height:12px;
+  border-radius:50%;
+  top:30px;right:5%;
+  background:#ff82b6;
+  box-shadow:
+    -28px 22px 0 -2px #ffd75e,
+    18px 42px 0 -3px #8ae6ff,
+    -48px 58px 0 -4px #c99cff;
+  opacity:.55;
+  pointer-events:none;
+}
+
+.section-title .kicker:before{content:'✦ ';color:#ff7cad}
+.section-title h2{position:relative;display:inline-block}
+.section-title h2:after{
+  content:'✧';
+  position:absolute;
+  right:-28px;top:-12px;
+  color:#f6a5c5;
+  font-family:Georgia,serif;
+  font-size:.62em;
+  transform:rotate(10deg);
+}
+
+.card,.service-card,.step,.note,.order{
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.card:hover,.service-card:hover{
+  transform:translateY(-5px) rotate(-.15deg);
+  box-shadow:0 20px 44px rgba(35,72,78,.14);
+}
+.card.featured{
+  outline:0;
+  border:2px solid rgba(255,115,173,.55);
+  box-shadow:0 18px 48px rgba(255,115,173,.14);
+}
+.card.featured:before{
+  content:'✦';
+  position:absolute;
+  left:15px;top:14px;
+  width:34px;height:34px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  color:#173640;background:#ffd75e;
+  font-size:15px;
+  z-index:3;
+}
+.badge{
+  background:linear-gradient(135deg,#ff73ad,#b26bd3);
+  box-shadow:0 8px 18px rgba(184,86,164,.18)
+}
+.features li:before{content:'✦';color:#ff7cad}
+.price{color:#0c6d6f}
+
+.image-placeholder{
+  position:relative;
+  isolation:isolate;
+}
+.image-placeholder:before,
+.image-placeholder:after{
+  content:'✦';
+  position:absolute;
+  z-index:-1;
+  font-size:24px;
+  color:rgba(255,255,255,.92);
+}
+.image-placeholder:before{left:18px;top:16px;transform:rotate(-10deg)}
+.image-placeholder:after{right:18px;bottom:14px;transform:rotate(13deg);font-size:17px}
+
+.pill{
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(35,72,78,.06);
+}
+.pill:after{
+  content:'✦';
+  position:absolute;
+  right:12px;top:9px;
+  color:#f2a3c0;
+  font-size:12px;
+}
+
+.activity{
+  position:relative;
+  box-shadow:0 18px 42px rgba(148,95,181,.16);
+}
+.activity:before{content:'✦';position:absolute;right:24px;top:20px;color:#fff;font-size:28px}
+.activity:after{content:'★';position:absolute;right:58px;top:54px;color:#ffd75e;font-size:16px}
+
+.floating-wa{
+  border:3px solid rgba(255,255,255,.88);
+  animation:floaty 3s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* Keep sparkle effects tidy on smaller screens */
+@media(max-width:700px){
+  .hero-sparkles.left{display:none}
+  .hero-sparkles.right{right:0;top:3%;transform:scale(.8)}
+  .hero-photo{transform:none}
+  .hero-photo:before{left:10px;top:12px;width:44px;height:44px;font-size:18px}
+  .hero-photo:after{right:10px;bottom:12px;width:38px;height:38px;font-size:15px}
+  .section:before{opacity:.34;right:8%}
+  .section-title h2:after{right:-19px;top:-8px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+
+    .sparkle{position:absolute;pointer-events:none;animation:twinkle 2.8s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(255,255,255,.35))}
+    .sparkle.s1{top:18%;left:6%;font-size:1.4rem}.sparkle.s2{top:12%;right:46%;font-size:1rem;animation-delay:.8s}.sparkle.s3{bottom:18%;right:42%;font-size:1.2rem;animation-delay:1.5s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.45}50%{transform:scale(1.2) rotate(8deg);opacity:1}}
+    .content-band{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .article-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:.5rem 0}.article-card p{color:var(--muted)}
+    .text-link{color:var(--teal);font-weight:900}.text-link:hover{text-decoration:underline}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust-item{background:rgba(255,255,255,.75);border:1px solid rgba(12,109,111,.12);padding:20px;border-radius:22px}
+    .trust-item strong{display:block;margin-bottom:6px;color:var(--teal-dark)}
+    .legal-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.9rem}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.article-grid,.trust-grid{grid-template-columns:1fr}}
+
+  
+/* V10 bug-fix patch */
+main section[id]{scroll-margin-top:84px}
+@media(max-width:760px){
+  .nav{position:relative;top:auto}
+  .nav-inner{min-height:68px}
+  .brand{font-size:.92rem;white-space:nowrap}
+  .brandmark{width:36px;height:36px;flex:0 0 36px}
+  .navlinks{gap:8px}
+  .navlinks .btn{padding:10px 12px;font-size:.88rem;white-space:nowrap}
+}
+@media(max-width:390px){.brand span:last-child{font-size:.82rem}.navlinks .btn{padding:9px 10px;font-size:.8rem}}
+</style>
+
+</head>
+<body>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="brandmark">P</span><span>POP &amp; PARCEL</span></a><div class="navlinks"><a href="#party-packs">Party Packs</a><a href="#events">Events</a><a href="party-ideas.html">Party Ideas</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a class="btn btn-primary wa-link" href="#">WhatsApp Us</a></div></div></nav>
+  <main id="top">
+    
+
+
+    
+    <section class="hero"><span class="sparkle s1">✦</span><span class="sparkle s2">✨</span><span class="sparkle s3">✦</span>
+      <div class="hero-bg"></div>
+      <div class="sparkle-cluster hero-sparkles left" aria-hidden="true"><span>✦</span><span>✧</span><span>★</span><span>✦</span></div>
+      <div class="sparkle-cluster hero-sparkles right" aria-hidden="true"><span>✦</span><span>✧</span><span>★</span><span>✦</span></div>
+
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Personalised celebrations made easy</div>
+          <h1>Make every celebration feel <span class="accent">made just for them.</span></h1>
+          <p>Thoughtfully personalised party packs, event favours and gifts for the moments you want to make extra special.</p>
+
+          <div class="actions">
+            <a class="btn btn-primary wa-link" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+            <a class="btn btn-secondary" href="#party-packs">View Our Products</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="hero-photo-label">✨ YOUR BEST PRODUCT / PARTY PHOTO ✨</div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="section soft" id="party-packs"><div class="wrap"><div class="section-title"><div class="kicker">Kids' Party Packs</div><h2>Choose your perfect party pack.</h2><p>Three simple packages so you can choose the right look and budget for your celebration. Minimum order: 10 packs.</p></div><div class="cards">
+      <article class="card">
+        <div class="image-placeholder"><div><strong>Mini Party Pack Photo</strong><span>Add a real photo of the R35 sample here</span></div></div>
+        <div class="kicker">Mini</div>
+        <div class="price">R35 <small style="font-size:1rem">pp</small></div>
+        <div class="sub">A fun personalised starter pack.</div>
+        <ul class="features">
+          <li>Personalised chips</li>
+          <li>Personalised juice box</li>
+          <li>Fizzer</li>
+          <li>Personalised bubble toy</li>
+        </ul>
+        <a class="btn btn-secondary order-btn" data-package="Mini Party Pack - R35 pp" href="#">Enquire about Mini</a>
+      </article>
+      <article class="card featured">
+        <div class="badge">MOST POPULAR</div>
+        <div class="image-placeholder"><div><strong>Signature Party Pack Photo</strong><span>Add a real photo of the R50 sample here</span></div></div>
+        <div class="kicker">Signature</div>
+        <div class="price">R50 <small style="font-size:1rem">pp</small></div>
+        <div class="sub">More treats, more personalisation and a fun activity.</div>
+        <ul class="features">
+          <li>Personalised chips</li>
+          <li>Personalised juice box</li>
+          <li>Bubble toy</li>
+          <li>Personalised colouring book</li>
+          <li>Candy-filled wafer cone <strong>or</strong> candy kebab — choose 1</li>
+        </ul>
+        <a class="btn btn-primary order-btn" data-package="Signature Party Pack - R50 pp" href="#">Order Signature</a>
+      </article>
+      <article class="card">
+        <div class="image-placeholder"><div><strong>Deluxe Party Box Photo</strong><span>Add a real photo of your decorated white Deluxe box here</span></div></div>
+        <div class="kicker">Deluxe</div>
+        <div class="price">R75 <small style="font-size:1rem">pp</small></div>
+        <div class="sub">Our premium personalised party box.</div>
+        <ul class="features">
+          <li>Everything in the Signature pack</li>
+          <li>Small personalised chocolate</li>
+          <li>Activity book + 4 crayons</li>
+          <li>Premium personalised white party box</li>
+        </ul>
+        <a class="btn btn-secondary order-btn" data-package="Deluxe Party Pack - R75 pp" href="#">Enquire about Deluxe</a>
+      </article>
+    </div></div></section>
+    <section class="section"><div class="wrap deluxe-strip"><div><div class="kicker">The Deluxe Experience</div><h2>A party pack that feels like a gift.</h2><p style="color:var(--muted)">Our Deluxe white party boxes are dressed up to feel like a gift. Themes can include bows, raised 3D-style names, layered shapes and age details, with a personalised activity book and crayons included inside.</p><div class="deluxe-list"><div class="pill">🎀 Bow option for selected themes</div><div class="pill">⭐ Layered 3D-style decorations</div><div class="pill">🖍 Activity book + 4 crayons</div><div class="pill">🍫 Small personalised chocolate</div></div></div><div class="activity"><div><div class="kicker" style="color:#5a4b80">Custom Activity</div><h3 style="font-size:1.8rem;margin:5px 0">Lerato's Birthday Fun!</h3></div><div class="sheet"><strong>Colour • Maze • Connect the dots • Activities</strong><p style="margin:.35rem 0;color:#788087">A personalised activity book created to match the party theme.</p><div class="crayons"><span></span><span></span><span></span><span></span></div></div></div></div></section>
+
+    <section class="section soft" id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="kicker">Personalised Event Extras</div>
+          <h2>Order the little details separately too.</h2>
+          <p>Alongside the set event packages, Pop &amp; Parcel can personalise individual items for your celebration.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="image-placeholder"><div><strong>Personalised Bottle Photo</strong><span>Add your bottle-branding sample here</span></div></div>
+            <h3>Personalised Bottled Water</h3>
+            <p>Custom 500 ml water-bottle labels with names, dates, messages and colours for unveilings, weddings, birthdays, showers and graduations.</p>
+            <a class="btn btn-secondary order-btn" data-package="Personalised Bottled Water" href="#">Enquire about Bottles</a>
+          </article>
+
+          <article class="service-card">
+            <div class="image-placeholder"><div><strong>Thank-You Chocolate Photo</strong><span>Add your mini chocolate sample here</span></div></div>
+            <h3>Thank-You Chocolates</h3>
+            <p>Small individually wrapped chocolates personalised with your event details — ideal as a simple thank-you gift.</p>
+            <a class="btn btn-secondary order-btn" data-package="Personalised Thank-You Chocolates" href="#">Enquire about Chocolates</a>
+          </article>
+
+          <article class="service-card">
+            <div class="image-placeholder"><div><strong>Thank-You Treat Bag Photo</strong><span>Add a drawstring candy favour sample here</span></div></div>
+            <h3>Thank-You Candy Gifts</h3>
+            <p>Small drawstring thank-you bags filled with 3–4 sweets and finished to suit your event theme.</p>
+            <a class="btn btn-secondary order-btn" data-package="Personalised Thank-You Candy Gifts" href="#">Enquire about Candy Gifts</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blue" id="events">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="kicker">Adult &amp; Event Favours</div>
+          <h2>Simple personalised favours for your guests.</h2>
+          <p>Ideal for unveilings, memorials, weddings, adult birthdays, baby showers, graduations and other celebrations. Recommended minimum order: 25.</p>
+        </div>
+
+        <div class="cards" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px">
+          <article class="card">
+            <div class="image-placeholder"><div><strong>Event Essential Photo</strong><span>Add a photo of personalised water + mini thank-you chocolate here</span></div></div>
+            <div class="kicker">Event Essential</div>
+            <div class="price">R20 <small style="font-size:1rem">pp</small></div>
+            <ul class="features">
+              <li>Personalised 500 ml bottled water</li>
+              <li>Small individually wrapped thank-you chocolate</li>
+              <li>Mini KitKat-style chocolate</li>
+            </ul>
+            <a class="btn btn-secondary order-btn" data-package="Event Essential - R20 pp" href="#">Enquire about Essential</a>
+          </article>
+
+          <article class="card featured">
+            <div class="badge">EVENT FAVOUR</div>
+            <div class="image-placeholder"><div><strong>Event Signature Photo</strong><span>Add a photo of the complete R30 event favour here</span></div></div>
+            <div class="kicker">Event Signature</div>
+            <div class="price">R30 <small style="font-size:1rem">pp</small></div>
+            <ul class="features">
+              <li>Personalised bottled water</li>
+              <li>Personalised chocolate — mini KitKat or Lunch Bar style</li>
+              <li>Small drawstring thank-you treat bag</li>
+              <li>3–4 sweets inside the treat bag</li>
+            </ul>
+            <a class="btn btn-primary order-btn" data-package="Event Signature - R30 pp" href="#">Enquire about Signature</a>
+          </article>
+        </div>
+
+        <div class="note" style="margin-top:20px;max-width:820px">
+          <strong>Need only one item?</strong>
+          <p>You can also enquire about personalised bottled water, thank-you chocolates or small candy favours on their own. Send us your quantity, event date and colours/theme for a quote.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section soft" id="embroidery">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="kicker">Embroidery &amp; Clothing Personalisation</div>
+          <h2>Names, standard text &amp; small logos.</h2>
+          <p>Ideal for school clothing, workwear, gifts and small logos. Maximum embroidery area is approximately 10 × 10 cm.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="image-placeholder"><div><strong>Embroidery Sample Photo</strong><span>Add photos of names, text and small logos here</span></div></div>
+            <h3>Embroidery Pricing</h3>
+            <ul class="features">
+              <li>Digitising of a new custom design/logo — <strong>R50 once-off</strong></li>
+              <li>Names / standard text using existing fonts — <strong>No digitising fee</strong></li>
+              <li>1-colour embroidery — <strong>R60</strong></li>
+              <li>2-colour embroidery — <strong>R70</strong></li>
+              <li>3-colour embroidery — <strong>R80</strong></li>
+              <li>4-colour embroidery — <strong>R90</strong></li>
+              <li>5-colour embroidery — <strong>R100</strong></li>
+            </ul>
+            <a class="btn btn-secondary order-btn" data-package="Embroidery / Clothing Personalisation" href="#">Ask About Embroidery</a>
+          </div>
+
+          <div class="note">
+            <strong>Custom logo?</strong>
+            <p>Send your logo on WhatsApp with the garment quantity and colours. New custom logos/designs have a once-off R50 digitising fee. The same saved design does not need to be digitised again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section lime" id="gallery">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="kicker">Our Work</div>
+          <h2>Made for you.</h2>
+          <p>These spaces are ready for your own party packs, party boxes, event favours, bottle branding and embroidery photos.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="image-placeholder"><div><strong>Party Pack Close-Up</strong><span>Names, chips, juice and theme details</span></div></div>
+          <div class="image-placeholder"><div><strong>Deluxe Party Box</strong><span>Bow, raised name, layered details, activity book and crayons</span></div></div>
+          <div class="image-placeholder"><div><strong>Personalised Water</strong><span>Wedding, unveiling or birthday bottle labels</span></div></div>
+          <div class="image-placeholder"><div><strong>Thank-You Candy Gift</strong><span>Small candy gift or treat bag</span></div></div>
+          <div class="image-placeholder"><div><strong>Event Favour</strong><span>Chocolate, favour box or guest gift</span></div></div>
+          <div class="image-placeholder"><div><strong>Embroidery</strong><span>Name, initial or small logo sample</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section purple"><div class="wrap"><div class="section-title"><div class="kicker">How It Works</div><h2>Ordering is easy.</h2></div><div class="steps"><div class="step"><b>1</b><strong>Tell us what you need</strong><p>Choose a pack/service, quantity, theme and date. <strong>Please place birthday orders at least 2 weeks in advance.</strong></p></div><div class="step"><b>2</b><strong>Get your quote</strong><p>We confirm availability, price and design details.</p></div><div class="step"><b>3</b><strong>Pay your deposit</strong><p>A 50% deposit confirms customised orders.</p></div><div class="step"><b>4</b><strong>Collect or deliver</strong><p>Balance is due before collection/delivery. Local delivery is charged separately.</p></div></div></div></section>
+    
+    <section class="section content-band" id="party-ideas-preview">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Party Ideas ✨</div><h2>Helpful ideas before you order.</h2><p>Simple guides for choosing party-pack contents, quantities and themes — written for South African families planning real celebrations.</p></div>
+        <div class="article-grid">
+          <article class="article-card"><span aria-hidden="true">🎁</span><h3>What should go inside a kids' party pack?</h3><p>A practical way to balance a drink, snack, sweet treat and one fun extra without overfilling the pack.</p><a class="text-link" href="party-ideas.html#what-to-pack">Read the guide →</a></article>
+          <article class="article-card"><span aria-hidden="true">🎈</span><h3>How many party packs should you order?</h3><p>Use your guest list, sibling count and a small backup allowance to avoid both shortages and unnecessary waste.</p><a class="text-link" href="party-ideas.html#how-many">Read the guide →</a></article>
+          <article class="article-card"><span aria-hidden="true">💸</span><h3>Choosing a party pack for your budget</h3><p>Compare Mini, Signature and Deluxe by experience, not only by the number of sweets inside.</p><a class="text-link" href="party-ideas.html#budget">Read the guide →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="why-us">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Made With Care</div><h2>Personalised, practical and party-ready.</h2></div>
+        <div class="trust-grid">
+          <div class="trust-item"><strong>Recognisable snacks</strong><span>We aim to use quality, familiar snacks and drinks rather than filling packs with products we would not happily serve at our own celebrations.</span></div>
+          <div class="trust-item"><strong>Child-friendly packaging</strong><span>Children's packaging is designed without exposed staples, pins or sharp fasteners, and sealed food packaging stays intact.</span></div>
+          <div class="trust-item"><strong>Plan at least 2 weeks ahead</strong><span>Birthday orders must be placed at least 2 weeks before the birthday date so there is enough time for sourcing, design and personalisation.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="order"><div class="wrap order"><div class="section-title"><div class="kicker">Enquire / Order</div><h2>Send your order straight to WhatsApp.</h2><p><strong>Birthday orders must be placed at least 2 weeks before the birthday date.</strong> Fill in the details below and WhatsApp will open with your enquiry already written for you.</p></div><form id="orderForm"><div class="form-grid"><label>Your name<input id="name" type="text" placeholder="e.g. Lerato" required></label><label>What are you interested in?<select id="product" required>
+                <option value="">Choose an option</option>
+                <option>Mini Party Pack - R35 pp</option>
+                <option>Signature Party Pack - R50 pp</option>
+                <option>Deluxe Party Pack - R75 pp</option>
+                <option>Event Essential - R20 pp</option>
+                <option>Event Signature - R30 pp</option>
+                <option>Personalised Bottled Water</option>
+                <option>Personalised Thank-You Chocolates</option>
+                <option>Personalised Thank-You Candy Gifts</option>
+                <option>Embroidery / Clothing Personalisation</option>
+                <option>Something else</option>
+              </select></label><label>Quantity<input id="qty" type="number" min="1" placeholder="e.g. 20"></label><label>Birthday / event date<input id="date" type="date"><span class="form-help">Please order at least 2 weeks before the birthday or event date.</span></label><label class="full">Theme, colours or details<textarea id="details" placeholder="e.g. Pink princess theme, child is turning 6, name is Amara..."></textarea></label><div class="full"><button class="btn btn-primary" type="submit">💬 Send Enquiry on WhatsApp</button><p class="form-help">WhatsApp will open with your enquiry. You can review the message before sending it.</p></div></div></form></div></section>
+  </main>
+  <footer><div class="wrap footer-grid"><div><div class="brand"><span class="brandmark">P</span><span>POP &amp; PARCEL</span></div><p>Personalised Parties • Gifts • Events</p></div><div><strong>Vaal Triangle, South Africa</strong><br><span class="fineprint">Collection available. Local delivery charged separately.</span><div class="legal-links"><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+  <a class="floating-wa wa-link" href="#" aria-label="Chat on WhatsApp">WA</a>
+  <script>
+    // Replace with your WhatsApp number in international format, without +, spaces or leading zero.
+    // Example: 082 123 4567 becomes 27821234567.
+    const WHATSAPP_NUMBER = "27XXXXXXXXX";
+    function wa(message){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`}
+    document.querySelectorAll('.wa-link').forEach(link=>{link.href=wa('Hi Pop & Parcel! 👋 I would like to enquire about your personalised products.');link.target='_blank';link.rel='noopener'});
+    document.querySelectorAll('.order-btn').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();window.open(wa(`Hi Pop & Parcel! 👋 I would like to enquire about ${btn.dataset.package}. Please send me more information.`),'_blank')}));
+    document.getElementById('orderForm')?.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim();const product=document.getElementById('product').value;const qty=document.getElementById('qty').value||'Not sure yet';const date=document.getElementById('date').value||'Not confirmed yet';const details=document.getElementById('details').value.trim()||'No extra details yet';const msg=`Hi Pop & Parcel! 👋\n\nI'd like to enquire/order.\n\nName: ${name}\nProduct: ${product}\nQuantity: ${qty}\nRequired/Event date: ${date}\nTheme/details: ${details}\n\nPlease let me know the next steps and deposit amount.`;window.open(wa(msg),'_blank')});
+  </script>
+</body>
+</html>
