@@ -1102,6 +1102,54 @@ main section[id]{scroll-margin-top:84px}
   .navlinks .btn{padding:10px 12px;font-size:.88rem;white-space:nowrap}
 }
 @media(max-width:390px){.brand span:last-child{font-size:.82rem}.navlinks .btn{padding:9px 10px;font-size:.8rem}}
+
+
+/* Hero image placeholder */
+.hero-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.45), transparent 22%),
+    radial-gradient(circle at 75% 70%, rgba(255,181,215,.75), transparent 32%),
+    linear-gradient(145deg, #f4c6de, #c7a3fb 54%, #84d8f4);
+  color: var(--teal);
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-photo-placeholder strong {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  letter-spacing: .04em;
+}
+
+.hero-photo-placeholder small {
+  margin-top: 10px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--teal-dark);
+}
+
+.placeholder-sparkle {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 1.5rem;
+  color: #ffd75e;
+  animation: twinkle 2.8s ease-in-out infinite;
+}
 </style>
 
 </head>
@@ -1130,7 +1178,9 @@ main section[id]{scroll-margin-top:84px}
         </div>
 
         <div class="hero-photo">
-          <div class="hero-photo-label">✨ YOUR BEST PRODUCT / PARTY PHOTO ✨</div>
+          <div class="hero-photo-placeholder">
+            <span class="placeholder-icon">📸</span>
+            <img src="images/hero.png" alt="Sample party pack photo" style="max-width:100%;border-radius:16px;box-shadow:0 12px 28px rgba(0,0,0,.18);">
         </div>
       </div>
     </section>
@@ -1140,7 +1190,7 @@ main section[id]{scroll-margin-top:84px}
 
     <section class="section soft" id="party-packs"><div class="wrap"><div class="section-title"><div class="kicker">Kids' Party Packs</div><h2>Choose your perfect party pack.</h2><p>Three simple packages so you can choose the right look and budget for your celebration. Minimum order: 10 packs.</p></div><div class="cards">
       <article class="card">
-        <div class="image-placeholder"><div><strong>Mini Party Pack Photo</strong><span>Add a real photo of the R35 sample here</span></div></div>
+        <div class="image-placeholder"><div><img src="images/mini.png"></div>
         <div class="kicker">Mini</div>
         <div class="price">R35 <small style="font-size:1rem">pp</small></div>
         <div class="sub">A fun personalised starter pack.</div>
@@ -1153,9 +1203,9 @@ main section[id]{scroll-margin-top:84px}
       </article>
       <article class="card featured">
         <div class="badge">MOST POPULAR</div>
-        <div class="image-placeholder"><div><strong>Signature Party Pack Photo</strong><span>Add a real photo of the R50 sample here</span></div></div>
+        <div class="image-placeholder"><div><img src="images/signature.png"></div></div>
         <div class="kicker">Signature</div>
-        <div class="price">R50 <small style="font-size:1rem">pp</small></div>
+        <div class="price">R55 <small style="font-size:1rem">pp</small></div>
         <div class="sub">More treats, more personalisation and a fun activity.</div>
         <ul class="features">
           <li>Personalised chips</li>
@@ -1167,7 +1217,7 @@ main section[id]{scroll-margin-top:84px}
         <a class="btn btn-primary order-btn" data-package="Signature Party Pack - R50 pp" href="#">Order Signature</a>
       </article>
       <article class="card">
-        <div class="image-placeholder"><div><strong>Deluxe Party Box Photo</strong><span>Add a real photo of your decorated white Deluxe box here</span></div></div>
+        <div class="image-placeholder"><div><img src="images/premiumBox.png"></div></div>
         <div class="kicker">Deluxe</div>
         <div class="price">R75 <small style="font-size:1rem">pp</small></div>
         <div class="sub">Our premium personalised party box.</div>
